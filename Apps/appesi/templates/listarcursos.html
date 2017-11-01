@@ -1,33 +1,44 @@
-{% extends 'base.html' %}
-{% block contenido %}
+{% extends 'base.html'%}
+{% load widget_tweaks %}
+{% block contenido%}
 <body>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
 <br>
-<div>
-<center><h2>Listar Articulos</h2></center>
+<div class="well well-sm">
+     <h5>Cursos</h5>
 </div>
-<table class="table">
-<thead class="thead-inverse">
-    <tr>
-      <th>Nombre</th>
-      <th>Tipo</th>
-      <th>Descripsion</th>
-    </tr>
-</thead>
-	
-{% for art in object_list %}
 
-<tr>
-<td> {{ art.nombre }} </td>
-<td> {{ art.tipo }} </td>
-<td> {{ art.descripsion }} </td>
+ <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">
 
-</tr>
+          <table class="table table-striped table-hover ">
 
-{% endfor %}
+          <thead>
+          <tr>
+              <th>Nombre del Curso o Carrera</th>
+              <th>Descripcion</th>
+             
+          </tr>
+        </thead>
+        {% for est in object_list %}
+        <tbody>
+          <tr>
+            <td>{{ est.tipocursof  }}</td>
+            <td>{{ est.descripcion }}</td>
+            
+          </tr>
+         
+        </tbody>
+         {% endfor %}
 
 </table>
+
+
+          </span>
+        </div>
+      </div>
+    </div>
+
 </body>
 {% endblock %}

@@ -64,3 +64,10 @@ class IngresarComputadoraView(CreateView):
 	template_name = 'ingresarcomputadora.html'
 	form_class = ComputadoraForm
 	success_url = reverse_lazy('appesi:index')
+
+class ListaCursoView(ListView):
+	template_name = 'listarcursos.html'
+	model = Cursomod
+
+	def get_queryset(self):
+		return Cursomod.objects.all()
