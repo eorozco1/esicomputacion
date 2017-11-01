@@ -1,6 +1,6 @@
 from django.conf.urls import url,include
 from django.contrib import admin
-from .views import IndexView,IngresarCursoView,IngresarTipoCursoView,IngresarTipoPagoView,LoginView,logoutview, CrearUsuarioView, ContactoView, QuienView
+from .views import IndexView,IngresarCursoView,IngresarTipoCursoView,IngresarTipoPagoView,LoginView,logoutview, CrearUsuarioView, ContactoView, QuienView,IngresarComputadoraView
 
 urlpatterns = [
    url(r'^$', IndexView.as_view(), name ='index'),
@@ -12,5 +12,6 @@ urlpatterns = [
    url(r'^CrearUsuario$', CrearUsuarioView.as_view(), name='CrearUsuario'),
    url(r'^Contacto$', ContactoView.as_view(),name='contacto'),
    url(r'^Quien$', QuienView.as_view(),name='quien'),
+   url(r'^IngComputadora$', IngresarComputadoraView.as_view(), name ='IngComputadora'),
 
 ]

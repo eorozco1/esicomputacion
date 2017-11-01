@@ -10,6 +10,8 @@ from .models import Tipocursomod
 from .forms import  TipoCursoForm
 from .models import Tipopagomod
 from .forms import  TipoPagoForm
+from .models import Computadoramod
+from .forms import  ComputadoraForm
 from django.contrib.auth.models import User
 
 from django.contrib.auth import login, logout
@@ -57,3 +59,8 @@ class ContactoView(TemplateView):
 
 class QuienView(TemplateView):
 	template_name='quien.html'
+
+class IngresarComputadoraView(CreateView):
+	template_name = 'ingresarcomputadora.html'
+	form_class = ComputadoraForm
+	success_url = reverse_lazy('appesi:index')

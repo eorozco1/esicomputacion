@@ -22,12 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
-
-
-
-    <!--APLICANDO JQUERY EN CLASE -->
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    
 
 
    
@@ -43,14 +38,14 @@
       <div class="container">
        {% if user.is_authenticated %}  
     <h6> BIENVENIDO: {{user.username}}</h6>&nbsp; &nbsp; &nbsp; &nbsp;
-    <h5><A HREF="{% url 'appesi:logout' %}">SALIR</A></h5>
+    <h5><A HREF="{% url 'appesi:logout' %}">Salir</A></h5>
       {% else %}
-    <h7 ><A HREF="{% url 'appesi:Login' %}">ADMINISTRADOR</A></h7>
+    <h7 ><A HREF="{% url 'appesi:Login' %}">Administrador</A></h7>
       {% endif %}   
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="">Home
+              <a class="nav-link" href="{% url 'appesi:index'%}">Inicio
                 <span class="sr-only">(current)</span>
            </a>
             </li>
@@ -83,12 +78,10 @@
 
           <h4 class="my-4">CURSOS</h4>
           <div class="list-group">
-            <a href="#" class="list-group-item">MINEDUC</a>
-            <a href="#" class="list-group-item">DIBUJO Y DISEÑO</a>
-            <a href="#" class="list-group-item">AUTOCAD</a>
-
+            <a href="#" class="list-group-item">Mineduc</a>
+            <a href="#" class="list-group-item">Dibujo y Diseño</a>
+            <a href="#" class="list-group-item">Autocad</a>
           </div>
-          <button id="btnMostrar">MOSTRAR</button>
       </div>
         <!-- /.col-lg-3 -->
       <div> 
