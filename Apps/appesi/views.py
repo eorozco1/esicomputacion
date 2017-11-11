@@ -12,6 +12,14 @@ from .models import Tipopagomod
 from .forms import  TipoPagoForm
 from .models import Computadoramod
 from .forms import  ComputadoraForm
+from .models import Tipocomputadoramod
+from .forms import  TipoComputadoraForm
+from .models import Marcamod
+from .forms import  MarcaForm
+from .forms import  TipoAccesorioForm
+from .models import Tipoaccesoriomod
+from .forms import  AccesorioForm
+from .models import Accesoriomod
 from django.contrib.auth.models import User
 
 from django.contrib.auth import login, logout
@@ -38,7 +46,7 @@ class IngresarTipoPagoView(CreateView):
 class LoginView(FormView):
 	template_name='login.html'
 	form_class = AuthenticationForm
-	success_url = reverse_lazy('appesi:IngCurso')
+	success_url = reverse_lazy('appesi:Administrador')
 
 	def form_valid (self, form):
 		login(self.request, form.get_user())
@@ -68,6 +76,37 @@ class IngresarComputadoraView(CreateView):
 class ListaCursoView(ListView):
 	template_name = 'listarcursos.html'
 	model = Cursomod
+	paginate_by = 3
 
 	def get_queryset(self):
 		return Cursomod.objects.all()
+
+class IngresarTipoPcView(CreateView):
+	template_name = 'ingresarTipoComputadora.html'
+	form_class = TipoComputadoraForm
+	success_url = reverse_lazy('appesi:index')
+
+class MarcaView(CreateView):
+	template_name = 'ingresarMarca.html'
+	form_class = MarcaForm
+	success_url = reverse_lazy('appesi:index')
+
+def custom_404(request):
+	return render_to_response('404.html', RequestContext(request))
+
+def custom_500(request):
+	return render_to_response('500.html', RequestContext(request))
+
+class IngresarAccesorioView(CreateView):
+	template_name = 'ingresarAccesorio.html'
+	form_class = AccesorioForm
+	success_url = reverse_lazy('appesi:index')
+
+class TipoAccesorioView(CreateView):
+	template_name = 'ingresarTipoAccesorio.html'
+	form_class = TipoAccesorioForm
+	success_url = reverse_lazy('appesi:index')
+
+class AdministradorView(TemplateView):
+	template_name='base0.html'
+

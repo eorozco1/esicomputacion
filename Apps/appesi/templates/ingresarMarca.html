@@ -6,19 +6,18 @@
 <br>
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <center><h6 class="panel-title">TIPO CURSO</h6></center>
+    <center><h6 class="panel-title">MARCA</h6></center>
     <br>
   </div>
   <div class="panel-body">
      <form method="POST">
       {% csrf_token %}
-        <div class="row">
+  <div class="row">
         <div class="input-field col s6">
-          {% render_field form.nombre%}
-          <label for="first_name">{{form.nombre.label}}</label>
+          {% render_field form.marca%}
+          <label for="first_name">{{form.marca.label}}</label>
         </div>
-      </div>
-       
+  </div>
         
         <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
      </form>
@@ -33,12 +32,16 @@
 <br>
 <br>
 <br>
-<br> 
 <br>
+<br> 
 <br>  
-    
 </body>
  {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -60,5 +63,5 @@
     <br>
     <br>
     <br>
-    {% endif%}
+{% endif%}
 {% endblock %}

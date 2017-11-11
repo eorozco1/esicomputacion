@@ -52,7 +52,7 @@ class Cursomod(models.Model):
 		return self.descripcion
 
 class Computadoramod(models.Model):
-	imagen = models.FileField(default="")
+	#imagen = models.FileField()
 	hdd = models.CharField(max_length=15,default="")
 	ram = models.CharField(max_length=30,default="")
 	pantalla = models.CharField(max_length=30,default="")
@@ -65,9 +65,9 @@ class Computadoramod(models.Model):
 		return self.otros
 
 class Accesoriomod(models.Model):
-	imagen = models.FileField(default="")
+	#imagen = models.FileField(default="")
 	precio = models.CharField(max_length=15,default="")
 	otros = models.CharField(max_length=1500,default="")
 	marcaf = models.ForeignKey(Marcamod,default="")
-	tipoaccesoriof = models.ForeignKey(Tipoaccesoriomod,default="")
+	tipoaccesoriosf = models.ForeignKey(Tipoaccesoriomod,default="")
 

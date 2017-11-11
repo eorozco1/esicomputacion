@@ -44,6 +44,11 @@ class TipoAccesorioForm(forms.ModelForm):
 		model = Tipoaccesoriomod
 		fields = '__all__'
 
+class AccesorioForm(forms.ModelForm):
+	class Meta:
+		model = Accesoriomod
+		fields = '__all__'
+
 
 
 		

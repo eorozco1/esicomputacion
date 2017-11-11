@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base0.html' %}
 {% load widget_tweaks %}
 {% block contenido %}
 {% if user.is_authenticated %}
@@ -12,25 +12,69 @@
   <div class="panel-body">
      <form method="POST">
       {% csrf_token %}
+      
+       
+       
+       <div>
+       {% render_field form.tipocomputadoraf %}      
+       </div>
+      
+        
+      <a class="waves-effect waves-light btn" href="{% url 'appesi:IngTipoPc'%}">Ingresar Tipo Pc</a>
+    
 
-      <div class="row">
-       <div class="file-field input-field col s12 m12">
-        {% if form.imagen.value %}
-        <div class="col s2 m2 12">
-          <span>Actual</span>
-            <img class="responsive-img" src="/media/{{ form.imagen.value }}">
+
+
+
+
+       <div class="row">
+
+  <div class="input-field col s6">
+          {% render_field form.hdd %}
+          <label for="first_name">{{form.hdd.label}}</label>
         </div>
-          {% endif %}
-           <br><br>
-       <div class="btn">
-       {% render_field form.imagen %}
-       <span>{{ form.imagen.label }} </span>
-      <input type="file" name="{{ form.imagen.html_name }}">
-    </div>
-  <div class="file-path-wrapper">
-  <imput class="file-path validate" type="text">
-  </div>
-  </div>
+
+    <div class="input-field col s6">
+          {% render_field form.ram %}
+          <label for="first_name">{{form.ram.label}}</label>
+        </div>
+ <div class="input-field col s6">
+          {% render_field form.pantalla%}
+          <label for="first_name">{{form.pantalla.label}}</label>
+        </div>
+</div>
+
+
+
+<div class="row">
+ <div class="input-field col s6">
+          {% render_field form.otros%}
+          <label for="first_name">{{form.otros.label}}</label>
+        </div>
+      </div>
+
+
+
+
+ <div class="row">
+  <div class="col s12">
+          Costo Q:
+          <div class="input-field inline">
+            {% render_field form.precio%}
+            <label for="email" data-error="wrong" data-success="right">{{form.precio.label}}</label>
+          </div>
+        </div>
+</div>     
+
+
+
+
+ <div>
+       {% render_field form.marcaf %}      
+       </div>
+ 
+ <a class="waves-effect waves-light btn" href="{% url 'appesi:Marca'%}">Ingresar Marca</a>
+
   <br>
   <br>
   <br>

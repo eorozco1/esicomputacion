@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base0.html' %}
 {% load widget_tweaks %}
 {% block contenido %}
 {% if user.is_authenticated %}
@@ -16,6 +16,7 @@
        <div>
        {% render_field form.tipocursof %}      
        </div> 
+        <a class="waves-effect waves-light btn" href="{% url 'appesi:IngTipoCurso'%}">Ingresar Curso</a>
      
         <div class="row">
         <div class="input-field col s6">
@@ -94,6 +95,9 @@
   
   </div> 
 
+   <a class="waves-effect waves-light btn" href="{% url 'appesi:IngTipoPago'%}">Ingresar Forma de Pago </a>
+   <br>
+   <br>
      <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
      </form>
   </div>

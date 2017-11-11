@@ -1,0 +1,82 @@
+{% extends 'base0.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% if user.is_authenticated %}
+<body>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><h6 class="panel-title">INGRESAR ACCESORIO</h6></center>
+    <br>
+  </div>
+  <div class="panel-body">
+     <form method="POST">
+      {% csrf_token %}
+    
+     
+       <div>
+       {% render_field form.tipoaccesoriosf %}      
+       </div>
+       <a class="waves-effect waves-light btn" href="{% url 'appesi:IngTipoAccesorio'%}">Ingresar Tipo Accesorio</a>
+        <div>
+       {% render_field form.marcaf %}
+       <a class="waves-effect waves-light btn" href="{% url 'appesi:Marca'%}">Ingresar Marca</a>      
+       </div>
+
+   
+
+<div class="row">
+<div class="col s12">
+          Precio Q:
+          <div class="input-field inline">
+            {% render_field form.precio%}
+            <label for="email" data-error="wrong" data-success="right">{{form.precio.label}}</label>
+          </div>
+        </div>
+</div>
+
+
+
+<div class="row">
+ <div class="input-field col s6">
+          {% render_field form.otros%}
+          <label for="first_name">{{form.otros.label}}</label>
+        </div>
+      </div>
+
+     
+     
+   
+  <br>
+  <br>
+  <br>
+
+     <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
+     </form>
+  </div>
+</div>
+<br>
+    {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <div class="card-panel teal lighten-2">
+      <h2><a class="campo3" href="{% url 'appesi:Login' %}">Registrarse</a></h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endif%}
+    {% endblock %}
